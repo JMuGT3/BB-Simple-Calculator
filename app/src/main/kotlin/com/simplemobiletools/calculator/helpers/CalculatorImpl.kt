@@ -66,7 +66,7 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
                     context.toast(context.getString(R.string.formula_divide_by_zero_error))
                 }
 
-                setFormula(first + sign + second)
+                setFormula(first + sign + second + " = " + displayedNumber)
             }
         }
     }
@@ -112,13 +112,13 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
     }
 
     private fun calculateResult(update: Boolean = true) {
-        if (update) updateFormula()
 
         val operation = OperationFactory.forId(lastOperation!!, baseValue, secondValue)
         Log.i("ANGELINA", "oper $lastOperation")
         if (operation != null) {
             updateResult(operation.getResult())
         }
+        if (update) updateFormula()
 
         isFirstOperation = false
     }
@@ -180,7 +180,7 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
     fun handleReset() {
         resetValues()
         setValue("0")
-        setFormula("")
+        //setFormula("")
     }
 
     fun handleEquals() {

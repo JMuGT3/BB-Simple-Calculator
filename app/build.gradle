@@ -9,7 +9,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 28
 
     defaultConfig {
         applicationId "com.simplemobiletools.calculator"

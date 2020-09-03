@@ -3,15 +3,13 @@ package com.simplemobiletools.calculator.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.view.WindowManager
+import android.util.Log
+import android.view.*
+import com.simplemobiletools.calculator.BuildConfig
 import com.simplemobiletools.calculator.R
 import com.simplemobiletools.calculator.extensions.config
 import com.simplemobiletools.calculator.extensions.updateViewColors
 import com.simplemobiletools.calculator.helpers.*
-import com.simplemobiletools.calculator.BuildConfig
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_AUTOFITTEXTVIEW
 import com.simplemobiletools.commons.helpers.LICENSE_ESPRESSO
@@ -25,6 +23,7 @@ import java.math.BigDecimal
 class MainActivity : SimpleActivity(), Calculator {
     private var storedTextColor = 0
     private var vibrateOnButtonPress = true
+    private var lastKeyEvent = 0
 
     lateinit var calc: CalculatorImpl
 
@@ -35,22 +34,22 @@ class MainActivity : SimpleActivity(), Calculator {
 
         calc = CalculatorImpl(this, applicationContext)
 
-        btn_plus.setOnClickListener { calc.handleOperation(PLUS); checkHaptic(it) }
-        btn_minus.setOnClickListener { calc.handleOperation(MINUS); checkHaptic(it) }
-        btn_multiply.setOnClickListener { calc.handleOperation(MULTIPLY); checkHaptic(it) }
-        btn_divide.setOnClickListener { calc.handleOperation(DIVIDE); checkHaptic(it) }
-        btn_percent.setOnClickListener { calc.handleOperation(PERCENT); checkHaptic(it) }
-        btn_power.setOnClickListener { calc.handleOperation(POWER); checkHaptic(it) }
-        btn_root.setOnClickListener { calc.handleOperation(ROOT); checkHaptic(it) }
+        btn_plus.setOnClickListener { calc.handleOperation(PLUS); checkHaptic(it); signLabel.setText(PLUS_SIGN)  }
+        btn_minus.setOnClickListener { calc.handleOperation(MINUS); checkHaptic(it); signLabel.setText(MINUS_SIGN) }
+        btn_multiply.setOnClickListener { calc.handleOperation(MULTIPLY); checkHaptic(it); signLabel.setText(MULTIPLY_SIGN) }
+        btn_divide.setOnClickListener { calc.handleOperation(DIVIDE); checkHaptic(it); signLabel.setText(DIVIDE_SIGN) }
+        btn_percent.setOnClickListener { calc.handleOperation(PERCENT); checkHaptic(it); signLabel.setText(PERCENT_SIGN) }
+        btn_power.setOnClickListener { calc.handleOperation(POWER); checkHaptic(it); signLabel.setText(POWER_SIGN) }
+        btn_root.setOnClickListener { calc.handleOperation(ROOT); checkHaptic(it); signLabel.setText(ROOT_SIGN) }
 
-        btn_clear.setOnClickListener { calc.handleClear(); checkHaptic(it) }
-        btn_clear.setOnLongClickListener { calc.handleReset(); true }
+        btn_clear.setOnClickListener { calc.handleClear(); checkHaptic(it);  }
+        btn_clear.setOnLongClickListener { signLabel.setText(BLANK_SIGN); calc.handleReset(); true }
 
         getButtonIds().forEach {
             it.setOnClickListener { calc.numpadClicked(it.id); checkHaptic(it) }
         }
 
-        btn_equals.setOnClickListener { calc.handleEquals(); checkHaptic(it) }
+        btn_equals.setOnClickListener { calc.handleEquals(); checkHaptic(it); signLabel.setText(EQUALS_SIGN) }
         formula.setOnLongClickListener { copyToClipboard(false) }
         result.setOnLongClickListener { copyToClipboard(true) }
 
@@ -162,6 +161,48 @@ class MainActivity : SimpleActivity(), Calculator {
     }
 
     override fun setFormula(value: String, context: Context) {
-        formula.text = value
+        formula.append("\n")
+        formula.append(value)
+    }
+
+    override fun dispatchKeyEvent(event: KeyEvent): Boolean {
+        if(event.getAction() != KeyEvent.ACTION_UP)
+            return super.dispatchKeyEvent(event);
+
+        Log.i("key up", java.lang.String.valueOf(event.getKeyCode()))
+        //1=51, 2=33, 3=46, 4=47, 5=32, 6=34, 7=54, 8=52, 9=31, 0=7, plus=43, minus=37, multiply=29, divide=35, percent=45, power=48, root=53, enter=66, backspace=67, space=62
+        //btn_decimal, btn_0, btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9
+        //btn_plus, btn_minus, btn_multiply, btn_divide, btn_percent, btn_power, btn_root, btn_equals.
+        when(event.keyCode) {
+            51 -> btn_1.callOnClick()
+            33 -> btn_2.callOnClick()
+            46 -> btn_3.callOnClick()
+            47 -> btn_4.callOnClick()
+            32 -> btn_5.callOnClick()
+            34 -> btn_6.callOnClick()
+            54 -> btn_7.callOnClick()
+            52 -> btn_8.callOnClick()
+            31 -> btn_9.callOnClick()
+            7 -> btn_0.callOnClick()
+            43 -> btn_plus.callOnClick()
+            37 -> btn_minus.callOnClick()
+            29 -> btn_multiply.callOnClick()
+            35 -> btn_divide.callOnClick()
+            45 -> btn_percent.callOnClick()
+            48 -> btn_power.callOnClick()
+            53 -> btn_root.callOnClick()
+            62 -> btn_equals.callOnClick()
+            66 -> btn_equals.callOnClick()
+            67 -> {
+                if (lastKeyEvent == 67) {
+                    btn_clear.performLongClick();
+                } else {
+                    btn_clear.callOnClick()
+                }
+            }
+        }
+        lastKeyEvent = event.getKeyCode();
+
+        return super.dispatchKeyEvent(event)
     }
 }
