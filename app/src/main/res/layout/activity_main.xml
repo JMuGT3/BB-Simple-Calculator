@@ -30,7 +30,7 @@
             android:id="@+id/signLabel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:gravity="start|center_vertical"
             android:paddingLeft="10dp"
             android:textAlignment="center"

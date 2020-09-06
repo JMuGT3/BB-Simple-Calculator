@@ -2,7 +2,6 @@ package com.simplemobiletools.calculator
 
 import com.simplemobiletools.calculator.activities.MainActivity
 import com.simplemobiletools.calculator.helpers.*
-import com.simplemobiletools.calculator.BuildConfig
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test

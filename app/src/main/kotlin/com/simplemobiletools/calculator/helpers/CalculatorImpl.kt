@@ -16,6 +16,7 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
 
     private var isFirstOperation = false
     private var resetValue = false
+    private var firstNumber: BigDecimal = BigDecimal.ZERO
     private var baseValue: BigDecimal = BigDecimal.ZERO
     private var secondValue: BigDecimal = BigDecimal.ZERO
 
@@ -66,7 +67,7 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
                     context.toast(context.getString(R.string.formula_divide_by_zero_error))
                 }
 
-                setFormula(first + sign + second + " = " + displayedNumber)
+                setFormula(firstNumber.format() + sign + second + " = " + displayedNumber)
             }
         }
     }
@@ -116,6 +117,7 @@ class CalculatorImpl(calculator: Calculator, val context: Context) {
         val operation = OperationFactory.forId(lastOperation!!, baseValue, secondValue)
         Log.i("ANGELINA", "oper $lastOperation")
         if (operation != null) {
+            firstNumber = baseValue
             updateResult(operation.getResult())
         }
         if (update) updateFormula()

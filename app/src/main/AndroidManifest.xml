@@ -13,14 +13,14 @@
         tools:node="remove"/>
 
     <application
-        android:name=".App"
+        android:name="com.simplemobiletools.calculator.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_launcher_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.SplashActivity"
+            android:name="com.simplemobiletools.calculator.activities.SplashActivity"
             android:theme="@style/SplashTheme" />
 
         <activity-alias
@@ -28,7 +28,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_grey_black"
             android:roundIcon="@mipmap/ic_launcher_grey_black"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,7 +40,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_blue_grey"
             android:roundIcon="@mipmap/ic_launcher_blue_grey"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -52,7 +52,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_brown"
             android:roundIcon="@mipmap/ic_launcher_brown"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -64,7 +64,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_deep_orange"
             android:roundIcon="@mipmap/ic_launcher_deep_orange"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -76,7 +76,7 @@
             android:enabled="true"
             android:icon="@mipmap/ic_launcher"
             android:roundIcon="@mipmap/ic_launcher"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -88,7 +88,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_amber"
             android:roundIcon="@mipmap/ic_launcher_amber"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -100,7 +100,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_yellow"
             android:roundIcon="@mipmap/ic_launcher_yellow"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -112,7 +112,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_lime"
             android:roundIcon="@mipmap/ic_launcher_lime"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -124,7 +124,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_light_green"
             android:roundIcon="@mipmap/ic_launcher_light_green"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -136,7 +136,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_green"
             android:roundIcon="@mipmap/ic_launcher_green"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -148,7 +148,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_teal"
             android:roundIcon="@mipmap/ic_launcher_teal"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -160,7 +160,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_cyan"
             android:roundIcon="@mipmap/ic_launcher_cyan"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -172,7 +172,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_light_blue"
             android:roundIcon="@mipmap/ic_launcher_light_blue"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -184,7 +184,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_blue"
             android:roundIcon="@mipmap/ic_launcher_blue"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -196,7 +196,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_indigo"
             android:roundIcon="@mipmap/ic_launcher_indigo"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -208,7 +208,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_deep_purple"
             android:roundIcon="@mipmap/ic_launcher_deep_purple"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -220,7 +220,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_purple"
             android:roundIcon="@mipmap/ic_launcher_purple"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -232,7 +232,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_pink"
             android:roundIcon="@mipmap/ic_launcher_pink"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -244,7 +244,7 @@
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_red"
             android:roundIcon="@mipmap/ic_launcher_red"
-            android:targetActivity=".activities.SplashActivity">
+            android:targetActivity="com.simplemobiletools.calculator.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -253,10 +253,10 @@
         </activity-alias>
 
         <activity
-            android:name=".activities.MainActivity"
+            android:name="com.simplemobiletools.calculator.activities.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.WidgetConfigureActivity"
+            android:name="com.simplemobiletools.calculator.activities.WidgetConfigureActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyWidgetConfigTheme">
             <intent-filter>
@@ -264,28 +264,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.SettingsActivity"
+            android:name="com.simplemobiletools.calculator.activities.SettingsActivity"
             android:label="@string/settings"
-            android:parentActivityName=".activities.MainActivity" />
+            android:parentActivityName="com.simplemobiletools.calculator.activities.MainActivity" />
         <activity
-            android:name="com.simplemobiletools.commons.activities.AboutActivity"
+            android:name="commons.activities.AboutActivity"
             android:label="@string/about"
-            android:parentActivityName=".activities.MainActivity" />
+            android:parentActivityName="com.simplemobiletools.calculator.activities.MainActivity" />
         <activity
-            android:name="com.simplemobiletools.commons.activities.LicenseActivity"
+            android:name="commons.activities.LicenseActivity"
             android:label="@string/third_party_licences"
-            android:parentActivityName="com.simplemobiletools.commons.activities.AboutActivity" />
+            android:parentActivityName="commons.activities.AboutActivity" />
         <activity
-            android:name="com.simplemobiletools.commons.activities.CustomizationActivity"
+            android:name="commons.activities.CustomizationActivity"
             android:label="@string/customize_colors"
-            android:parentActivityName=".activities.SettingsActivity" />
+            android:parentActivityName="com.simplemobiletools.calculator.activities.SettingsActivity" />
         <activity
-            android:name="com.simplemobiletools.commons.activities.FAQActivity"
+            android:name="commons.activities.FAQActivity"
             android:label="@string/frequently_asked_questions"
-            android:parentActivityName="com.simplemobiletools.commons.activities.AboutActivity" />
+            android:parentActivityName="commons.activities.AboutActivity" />
 
         <receiver
-            android:name=".helpers.MyWidgetProvider"
+            android:name="com.simplemobiletools.calculator.helpers.MyWidgetProvider"
             android:icon="@drawable/img_widget_preview">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

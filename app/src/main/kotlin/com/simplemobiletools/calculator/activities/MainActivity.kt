@@ -1,6 +1,8 @@
 package com.simplemobiletools.calculator.activities
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -19,6 +21,7 @@ import com.simplemobiletools.commons.models.Release
 import kotlinx.android.synthetic.main.activity_main.*
 import me.grantland.widget.AutofitHelper
 import java.math.BigDecimal
+
 
 class MainActivity : SimpleActivity(), Calculator {
     private var storedTextColor = 0
@@ -123,7 +126,19 @@ class MainActivity : SimpleActivity(), Calculator {
             FAQItem(R.string.faq_6_title_commons, R.string.faq_6_text_commons)
         )
 
-        startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, true)
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+        builder.setTitle("Calculator")
+        builder.setMessage("Simple calculator app with Blackberry optimizations\nOptmized for hardware keyboard use\n\nBased on Simple-Calculator by SimpleMobileTools - https://www.simplemobiletools.com")
+        builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, id ->
+            // You don't have to do anything here if you just
+            // want it dismissed when clicked
+        })
+
+        // Create the AlertDialog object and return it
+
+        // Create the AlertDialog object and return it
+        builder.show()
+        //startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, true)
     }
 
     private fun getButtonIds() = arrayOf(btn_decimal, btn_0, btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9)
@@ -192,6 +207,7 @@ class MainActivity : SimpleActivity(), Calculator {
             48 -> btn_power.callOnClick()
             53 -> btn_root.callOnClick()
             62 -> btn_equals.callOnClick()
+            56 -> btn_decimal.callOnClick()
             66 -> btn_equals.callOnClick()
             67 -> {
                 if (lastKeyEvent == 67) {
