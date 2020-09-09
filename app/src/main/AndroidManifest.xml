@@ -268,21 +268,9 @@
             android:label="@string/settings"
             android:parentActivityName="com.simplemobiletools.calculator.activities.MainActivity" />
         <activity
-            android:name="commons.activities.AboutActivity"
-            android:label="@string/about"
-            android:parentActivityName="com.simplemobiletools.calculator.activities.MainActivity" />
-        <activity
-            android:name="commons.activities.LicenseActivity"
-            android:label="@string/third_party_licences"
-            android:parentActivityName="commons.activities.AboutActivity" />
-        <activity
-            android:name="commons.activities.CustomizationActivity"
+            android:name="com.simplemobiletools.commons.activities.CustomizationActivity"
             android:label="@string/customize_colors"
             android:parentActivityName="com.simplemobiletools.calculator.activities.SettingsActivity" />
-        <activity
-            android:name="commons.activities.FAQActivity"
-            android:label="@string/frequently_asked_questions"
-            android:parentActivityName="commons.activities.AboutActivity" />
 
         <receiver
             android:name="com.simplemobiletools.calculator.helpers.MyWidgetProvider"

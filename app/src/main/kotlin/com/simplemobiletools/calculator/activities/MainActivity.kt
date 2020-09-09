@@ -127,7 +127,7 @@ class MainActivity : SimpleActivity(), Calculator {
         )
 
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-        builder.setTitle("Calculator")
+        builder.setTitle("BB Calculator")
         builder.setMessage("Simple calculator app with Blackberry optimizations\nOptmized for hardware keyboard use\n\nBased on Simple-Calculator by SimpleMobileTools - https://www.simplemobiletools.com")
         builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, id ->
             // You don't have to do anything here if you just
@@ -207,7 +207,7 @@ class MainActivity : SimpleActivity(), Calculator {
             48 -> btn_power.callOnClick()
             53 -> btn_root.callOnClick()
             62 -> btn_equals.callOnClick()
-            56 -> btn_decimal.callOnClick()
+            41 -> btn_decimal.callOnClick()
             66 -> btn_equals.callOnClick()
             67 -> {
                 if (lastKeyEvent == 67) {
